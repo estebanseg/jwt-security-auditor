@@ -91,6 +91,22 @@ alg_none_live                info       OK           El servidor rechazó todos 
 Resultado global: sin hallazgos de riesgo.
 ```
 
+![Auditoría escenario vulnerable](https://github.com/estebanseg/jwt-security-auditor/blob/main/foto1.png?raw=true)
+
+*Ejecución de `jwt_auditor_cli.py` contra el escenario vulnerable (puerto 3000):
+4 hallazgos detectados, severidad máxima CRITICAL (secreto débil, alg=none
+aceptado con escalada a rol admin, y claims `iss`/`aud` ausentes).*
+
+![Auditoría escenario seguro](https://github.com/estebanseg/jwt-security-auditor/blob/main/foto2.png?raw=true)
+
+*Ejecución contra el escenario seguro (puerto 3001): sin hallazgos de
+riesgo, gracias a la whitelist de algoritmos, secreto robusto y validación
+de `iss`/`aud`.*
+
+![Suite de tests automatizados](https://github.com/estebanseg/jwt-security-auditor/blob/main/foto3.png?raw=true)
+
+*Suite de 14 pruebas automatizadas (`unittest`) ejecutadas correctamente.*
+
 ## 4. Instalación y uso
 
 ### Requisitos
